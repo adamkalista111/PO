@@ -1,0 +1,115 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("zad 2.1: ");
+            Console.WriteLine(stopnie());
+            Console.WriteLine("zad 2.2: ");
+            Console.WriteLine(delta());
+            Console.WriteLine("zad 2.3: ");
+            Console.WriteLine(bmi());
+            Console.WriteLine("zad 2.4: ");
+            Console.WriteLine(zad24());
+            Console.WriteLine("zad 2.5: ");
+            Console.WriteLine(zad25());
+            Console.WriteLine("zad 2.6: ");
+            Console.WriteLine(zad26());
+            Console.WriteLine("zad 2.7: ");
+            Console.WriteLine(zad27());
+            Console.WriteLine("zad 2.8: ");
+            Console.WriteLine(zad28());
+            Console.WriteLine("zad 2.10: ");
+            zad210();
+            Console.ReadKey();
+        }
+
+        //zad 2.1
+        private static float stopnie()
+        {
+            Console.Write("podaj stopnie: ");
+            float c = float.Parse(Console.ReadLine());
+            return 32 + ((9 * c) / 5);
+        }
+
+        //zad 2.2
+        private static float delta()
+        {
+            Console.Write("podaj a: ");
+            float a = float.Parse(Console.ReadLine());
+            Console.Write("podaj b: ");
+            float b = float.Parse(Console.ReadLine());
+            Console.Write("podaj c: ");
+            float c = float.Parse(Console.ReadLine());
+            return b * b + (-4 * a * c);
+        }
+
+        //zad 2.3
+        private static float bmi()
+        {
+            Console.Write("podaj mase: ");
+            float waga = float.Parse(Console.ReadLine());
+            waga *= waga;
+            Console.Write("podaj wzrost: ");
+            float wzrost = float.Parse(Console.ReadLine());
+            return waga / wzrost;
+        }
+
+        //zad 2.4
+        private static int zad24()
+        {
+            int x = 100;
+            return (++x * 2);
+        }
+
+        //zad 2.5
+        private static int zad25()
+        {
+            int x = 2, y = 3;
+            return (x * x * y * 2);
+        }
+
+        //zad 2.6
+        private static int zad26()
+        {
+            int x, y = 4;
+            x = (y -= 2);
+            x = ++y;
+            x = --y;
+            return x;
+        }
+
+        //zad 2.7
+        private static int zad27()
+        {
+            int x, y = 5;
+            x = ++y * 2;
+            x = y++;
+            x = y--;
+            return x;
+        }
+
+        //zad 2.8
+        private static bool zad28()
+        {
+            bool x;
+            int y = 1, z = 1;
+            x = (y == 1 && z == 1);
+            return x;
+        }
+
+        //zad 2.10
+        private static void zad210()
+        {
+            // zamaiana int na double
+            double powierzchnia = 100, osoby = 10;
+            double gestosc = osoby / powierzchnia;
+            Console.WriteLine(gestosc);
+        }
+
+    }
+
+}
