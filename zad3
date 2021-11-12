@@ -1,0 +1,276 @@
+using ConsoleApp1;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace programowanie_obiektowe
+{
+    class zadania3
+    {
+
+        public static void Zad31()
+        {
+            Console.WriteLine("podaj rok: ");
+            int rok = int.Parse(Console.ReadLine());
+            if (rok % 4 == 0)
+            {
+                if (rok % 100 != 0 || rok % 400 == 0)
+                {
+                    Console.WriteLine("rok jest przesteny");
+                    return;
+                }
+            }
+            Console.WriteLine("rok nie jest przestepny");
+        }
+
+        public static void Zad32()
+        {
+            Console.WriteLine("podaj pierwsza liczbe calkowita: ");
+            int a = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("podaj druga liczbe calkowita: ");
+            int b = int.Parse(Console.ReadLine());
+
+            if(a % b == 0)
+            {
+                Console.WriteLine("liczba " + b + " jest dzielnikiem liczby " + a);
+                return;
+            }
+            Console.WriteLine("liczba " + b + " nie jest dzielnikiem liczby " + a);
+        }
+
+        public static void Zad33()
+        {
+            int max = int.MinValue;
+            int a = max;
+            for(int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("podaj liczbe: ");
+                a = int.Parse(Console.ReadLine());
+                if (max < a)
+                    max = a;
+            }
+            Console.WriteLine("najwieksza liczba to: " + max);
+        }
+
+        public static void Zad34()
+        {
+            Console.WriteLine("podaj liczbe: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj liczbe: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj znak działania: ");
+            string znak = Console.ReadLine();
+
+            switch (znak)
+            {
+                case "+":
+                    Console.WriteLine("wynik: " + (a + b));
+                    break;
+                case "-":
+                    Console.WriteLine("wynik: " + (a - b));
+                    break;
+                case "*":
+                    Console.WriteLine("wynik: " + (a * b));
+                    break;
+                case "/":
+                    Console.WriteLine("wynik: " + (a / b));
+                    break;
+                default:
+                    Console.WriteLine("zly znak dzialania");
+                    break;
+            }
+
+        }
+
+        public static void Zad35()
+        {
+            Console.WriteLine("podaj liczbe: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj liczbe: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.WriteLine("podaj liczbe: ");
+            double c = double.Parse(Console.ReadLine());
+
+            double delta = (b * b) - (4 * a * c);
+
+            if (delta > 0)
+                Console.WriteLine("sa 2 pierwiastki");
+            else if (delta == 0)
+                Console.WriteLine("jest jeden pierwiastek");
+            else
+                Console.WriteLine("nie ma pierwiastkow w świecie liczb rzeczywistych");
+        }
+
+        public static void Zad36()
+        {
+            float bmi = zadania2.bmi();
+            if (bmi < 18.5)
+                Console.WriteLine("niedowaga");
+            else if (bmi >= 18.5 && bmi < 24.99)
+                Console.WriteLine("wartość prawidłowa");
+            else
+                Console.WriteLine("nadwaga");
+        }
+
+        public static void Zad37()
+        {
+            Console.WriteLine("Wpisz nr dnia tygodnia");
+            int dzien = int.Parse(Console.ReadLine());
+            switch (dzien)
+            {
+                case 1:
+                    Console.WriteLine("poniedzialek");
+                    break;
+                case 2:
+                    Console.WriteLine("wtorek");
+                    break;
+                case 3:
+                    Console.WriteLine("sroda");
+                    break;
+                case 4:
+                    Console.WriteLine("czwartek");
+                    break;
+                case 5:
+                    Console.WriteLine("piatek");
+                    break;
+                case 6:
+                    Console.WriteLine("sobota");
+                    break;
+                case 7:
+                    Console.WriteLine("niedziela");
+                    break;
+                default:
+                    Console.WriteLine("nie ma takiego dnia tygodnia");
+                    break;
+            }
+        }
+
+        public static void Zad38()
+        {
+            Console.WriteLine("podaj srednia: ");
+            double srednia = Convert.ToDouble(Console.ReadLine());
+
+            if (srednia >= 2.0 && srednia < 4.0)
+                Console.WriteLine("kwota : 0.00zl");
+            else if (srednia >= 4.0 && srednia < 4.8)
+                Console.WriteLine("kwota : 350.00zl");
+            else if (srednia >= 4.8 && srednia <= 5.0)
+                Console.WriteLine("kwota : 550.00zl");
+            else
+                Console.WriteLine("zla srednia");
+
+        }
+
+        public static void Zad39()
+        {
+            Console.WriteLine("podaj a, b lub c");
+            string znak = Console.ReadLine();
+
+            switch (znak)
+            {
+                case "a":
+                    Console.WriteLine("*\n**\n***\n****");
+                    break;
+                case "b":
+                    Console.WriteLine("****\n***\n**\n*");
+                    break;
+                case "c":
+                    Console.WriteLine("   *\n  * \n *  \n*   ");
+                    break;
+                case "d":
+                    Console.WriteLine("****\n*  *\n*  *\n****");
+                    break;
+                default:
+                    Console.WriteLine("zly znak");
+                    break;
+            }
+        }
+
+        public static void Zad310()
+        {
+            Console.WriteLine("podaj silnie: ");
+            int silnia = int.Parse(Console.ReadLine());
+            int suma = 1;
+            for(int i = 1; i <= silnia; i++)
+            {
+                suma *= i;
+            }
+            Console.WriteLine("silnia wynosi: " + suma);
+        }
+
+        public static void Zad311()
+        {
+            int sum = 0;
+            int i;
+            for (i = 1; sum + i <= 100; i++)
+                sum += i;
+            Console.WriteLine("potrzeba " + i + " liczb calkowitych");
+        }
+
+        public static void Zad312()
+        {
+            int sum = 0;
+            int liczba;
+            do
+            {
+                Console.WriteLine("podaj liczabe");
+                liczba = int.Parse(Console.ReadLine());
+                sum++;
+            } while (liczba != 0);
+            Console.WriteLine("wporwadzono " + sum + " liczb");
+        }
+
+        public static void Zad313()
+        {
+            Console.WriteLine("podaj n: ");
+            int sum = 0;
+            int n = int.Parse(Console.ReadLine());
+            for(int i = 1; i < n; i++)
+            {
+                if (i % 2 == 0)
+                    sum -= i;
+                else
+                    sum += i;
+            }
+            Console.WriteLine("suma wynosi: " + sum);
+        }
+
+        public static void Zad314()
+        {
+            int sumaPodzielnikow;
+            Console.WriteLine("podaj n: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("\n w podanym przedziale liczby calkowite to: ");
+            for(int i = 1; i <= n; i++)
+            {
+                sumaPodzielnikow = 0;
+                for(int j = i-1; j >= 1; j--)
+                {
+                    if (i % j == 0)
+                        sumaPodzielnikow += j;
+                }
+
+                if (sumaPodzielnikow == i)
+                    Console.Write(i + " ");
+            }
+
+        }
+
+        public static void Zad315()
+        {
+            int[] tab = { 5, 2, 1 };
+            int suma;
+            int ile = 0;
+
+            for(int i = 0; i != 3; i++)
+            {
+                suma = 0;
+                
+            }
+            Console.WriteLine("mozna ulozyc 10zl zz monet 1, 2 i 5 zl na " + ile);
+        }
+       
+
+    }
+}
